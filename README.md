@@ -1,4 +1,4 @@
-# README : FACTORY
+# README : Allsdoctors
 
 Bonjour! L'équipe est composée de Fred (FredS), Axel Pélerin et Juliette Audema. 
 
