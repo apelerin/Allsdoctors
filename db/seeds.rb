@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+10.times do |index|
+  doctors = Doctor.create!(first_name: Faker::HitchhikersGuideToTheGalaxy.character, last_name: Faker::HitchhikersGuideToTheGalaxy.planet, specialty: Faker::HitchhikersGuideToTheGalaxy.specie, postal_code: Faker::Address.zip)
+  patients = Patient.create!(first_name: Faker::Hipster.word, last_name: Faker::Hipster.word)
+end
+
+10.times do |meh|
+  appointments = Appointment.create!(date: "2018111 #{Faker::Number.between(5, 23)}:#{Faker::Number.between(1, 59)}:00", doctor_id: Faker::Number.between(1, 10), patient_id: Faker::Number.between(1,10))
+end
