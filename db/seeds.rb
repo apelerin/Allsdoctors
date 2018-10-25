@@ -8,7 +8,7 @@
 
 require 'faker'
 
-10.times do |index|
+15.times do |index|
   specialties = Specialty.create!(name: Faker::HitchhikersGuideToTheGalaxy.specie)
   cities = City.create!(name: Faker::Simpsons.location)
 end
@@ -21,3 +21,11 @@ end
 10.times do |meh|
   appointments = Appointment.create!(date: "2018111 #{Faker::Number.between(5, 23)}:#{Faker::Number.between(1, 59)}:00", doctor_id: Faker::Number.between(1, 10), patient_id: Faker::Number.between(1,10), city_id: Faker::Number.between(1, 10))
 end
+
+i = 1
+while i < 10
+Doctor.find(i).specialties <<  Specialty.find(i)
+Doctor.find(i).specialties <<  Specialty.find(i+1)
+i = i+1
+end 
+
